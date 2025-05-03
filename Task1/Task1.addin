@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Name>Create Floor</Name>
+		<Assembly>Task1.dll</Assembly>
+		<AddInId>
+			A695D06F-8381-47DE-A45F-42CFDB4ED460
+		</AddInId>
+		<FullClassName>Task1.CreateFloorCommand</FullClassName>
+		<Text>Create Floor.</Text>
+		<Description>Create floor out of set of points</Description>
+		<VendorId>ITI</VendorId>
+		<VendorDescription>@ITI</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+</RevitAddIns>
