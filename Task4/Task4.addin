@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
 	<AddIn Type="Command">
-		<Name>RevitDay1</Name>
-		<Assembly>RevitDay1.dll</Assembly>
+		<Name>Framing Wall</Name>
+		<Assembly>Task4.dll</Assembly>
 		<AddInId>
-			92415787-2C2C-4DF6-A070-CDB5B0EFCDD9
+			458AE59E-1587-42CD-9EBC-0A1707276E57
 		</AddInId>
-		<FullClassName>RevitDay1.FirstTrial</FullClassName>
-		<Text>FirstTrial</Text>
-		<Description>Get The window</Description>
+		<FullClassName>Task4.FramingWallCommand</FullClassName>
+		<Text>Framing Wall.</Text>
+		<Description>frame the wall</Description>
 		<VendorId>ITI</VendorId>
 		<VendorDescription>@ITI</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>

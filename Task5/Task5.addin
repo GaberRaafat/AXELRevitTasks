@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
 	<AddIn Type="Command">
-		<Name>RevitDay1</Name>
-		<Assembly>RevitDay1.dll</Assembly>
+		<Name>Modify Ssection Box</Name>
+		<Assembly>Task5.dll</Assembly>
 		<AddInId>
-			92415787-2C2C-4DF6-A070-CDB5B0EFCDD9
+			95B7780D-3457-4C16-8630-42EF857BE56F
 		</AddInId>
-		<FullClassName>RevitDay1.FirstTrial</FullClassName>
-		<Text>FirstTrial</Text>
-		<Description>Get The window</Description>
+		<FullClassName>Task5.SectionBoxCommand</FullClassName>
+		<Text>Modify Ssection Box.</Text>
+		<Description>Section-Box Modifica􀆟on</Description>
 		<VendorId>ITI</VendorId>
 		<VendorDescription>@ITI</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>

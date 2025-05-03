@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
 	<AddIn Type="Command">
-		<Name>RevitDay1</Name>
-		<Assembly>RevitDay1.dll</Assembly>
+		<Name>WC Placement</Name>
+		<Assembly>Task3.dll</Assembly>
 		<AddInId>
-			92415787-2C2C-4DF6-A070-CDB5B0EFCDD9
+			C2CEAFB6-A6F9-4B65-BDA2-E8CACA03713E
 		</AddInId>
-		<FullClassName>RevitDay1.FirstTrial</FullClassName>
-		<Text>FirstTrial</Text>
-		<Description>Get The window</Description>
+		<FullClassName>Task3.ProperPlacementCommand</FullClassName>
+		<Text>WC Placement.</Text>
+		<Description>Proper Placement of WC Family in Bathroom</Description>
 		<VendorId>ITI</VendorId>
 		<VendorDescription>@ITI</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>

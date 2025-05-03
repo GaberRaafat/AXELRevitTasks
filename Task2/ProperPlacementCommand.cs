@@ -6,7 +6,7 @@ using Autodesk.Revit.UI;
 namespace Task1
 {
     [Transaction(TransactionMode.Manual)]
-    public class CreateFloorCommand : IExternalCommand
+    public class ProperPlacementCommand : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
 	<AddIn Type="Command">
-		<Name>RevitDay1</Name>
-		<Assembly>RevitDay1.dll</Assembly>
+		<Name>making Threshold</Name>
+		<Assembly>Task3.dll</Assembly>
 		<AddInId>
-			92415787-2C2C-4DF6-A070-CDB5B0EFCDD9
+			78FC62FE-A0E5-40CB-87DD-5C5432911F47
 		</AddInId>
-		<FullClassName>RevitDay1.FirstTrial</FullClassName>
-		<Text>FirstTrial</Text>
-		<Description>Get The window</Description>
+		<FullClassName>Task3.AddingThresholdCommand</FullClassName>
+		<Text>Making Threshold.</Text>
+		<Description>Creating doors threshold</Description>
 		<VendorId>ITI</VendorId>
 		<VendorDescription>@ITI</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
