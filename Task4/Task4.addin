@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+	<AddIn Type="Command">
+		<Name>RevitDay1</Name>
+		<Assembly>RevitDay1.dll</Assembly>
+		<AddInId>
+			92415787-2C2C-4DF6-A070-CDB5B0EFCDD9
+		</AddInId>
+		<FullClassName>RevitDay1.FirstTrial</FullClassName>
+		<Text>FirstTrial</Text>
+		<Description>Get The window</Description>
+		<VendorId>ITI</VendorId>
+		<VendorDescription>@ITI</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+</RevitAddIns>
