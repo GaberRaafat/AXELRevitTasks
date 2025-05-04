@@ -86,9 +86,18 @@ namespace Task4
 
             }
 
-        }
 
-        private void CreateVerticalStud(Document doc, XYZ studPoint, double wallHeight, XYZ wallNormal, double wallWidth, double baseZelevation)
+            //Create bottom and top studs
+            CreateHorizontalStud(doc, wallCurve, baseZelevation, wallNormal, wallWidth); // Bottom
+            CreateHorizontalStud(doc, wallCurve, baseZelevation + wallHeight, wallNormal, wallWidth); // Top
+
+            //Create outer studs (start and end)
+            CreateVerticalStud(doc, wallCurve.GetEndPoint(0), wallHeight, wallNormal, wallWidth, baseZelevation);
+            CreateVerticalStud(doc, wallCurve.GetEndPoint(1), wallHeight, wallNormal, wallWidth, baseZelevation);
+
+        }
+        private void CreateVerticalStud(Document doc, XYZ studPoint, double wallHeight, XYZ wallNormal
+                                                        , double wallWidth, double baseZelevation)
         {
             XYZ offsetBasePoint = studPoint + wallNormal * wallWidth * 0.5 + XYZ.BasisZ * baseZelevation;
             XYZ topPoint = offsetBasePoint + XYZ.BasisZ * wallHeight;
@@ -96,6 +105,16 @@ namespace Task4
             Line studVrLine = Line.CreateBound(offsetBasePoint, topPoint);
             CreateModelCurve(doc, studVrLine, wallNormal, offsetBasePoint);
         }
+
+        private void CreateHorizontalStud(Document doc, Curve wallCurve, double baseZelevation
+                                            ,XYZ wallNormal, double wallWidth)
+        {
+            var HrStdOffset = Transform.CreateTranslation(wallNormal * wallWidth * 0.5 + XYZ.BasisZ * baseZelevation);
+
+            var HrStud = wallCurve.CreateTransformed(HrStdOffset);
+            CreateModelCurve(doc, HrStud, wallNormal, HrStud.GetEndPoint(0));
+        }
+
 
         private void CreateModelCurve(Document doc, Curve studCurve, XYZ wallNormal, XYZ wallOrigin)
         {
