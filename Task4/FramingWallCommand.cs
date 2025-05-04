@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
@@ -95,7 +97,23 @@ namespace Task4
             CreateVerticalStud(doc, wallCurve.GetEndPoint(0), wallHeight, wallNormal, wallWidth, baseZelevation);
             CreateVerticalStud(doc, wallCurve.GetEndPoint(1), wallHeight, wallNormal, wallWidth, baseZelevation);
 
+            // geting the doors and widnows hosted by that wall
+
+            var openingElements = new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance))
+                                            .OfCategory(BuiltInCategory.OST_Doors)
+                                            .Concat(new FilteredElementCollector(doc).OfClass(typeof(FamilyInstance))
+                                            .OfCategory(BuiltInCategory.OST_Windows))
+                                            .Cast<FamilyInstance>()
+                                            .Where(f => f.Host.Id == wallElement.Id)
+                                            .ToList();
+
+            foreach(var element in openingElements)
+            {
+                CreateOpeiningFraming(doc, element , wallNormal , wallWidth);
+            }
+                                                        
         }
+
         private void CreateVerticalStud(Document doc, XYZ studPoint, double wallHeight, XYZ wallNormal
                                                         , double wallWidth, double baseZelevation)
         {
@@ -116,6 +134,33 @@ namespace Task4
         }
 
 
+        private void CreateOpeiningFraming(Document doc, FamilyInstance element, XYZ wallNormal , double wallWidth)
+        {
+            var instanceBb = element.get_BoundingBox(null);
+
+            if (instanceBb == null) { return; }
+            XYZ BbMin = instanceBb.Min;
+            XYZ BbMax = instanceBb.Max;
+
+            var normalOffset = wallNormal * wallWidth * 0.5;
+
+            XYZ bottomLeft = BbMin + normalOffset;
+            XYZ topLeft = new XYZ(BbMin.X, BbMin.Y, BbMax.Z) + normalOffset;
+            XYZ topRight = new XYZ(BbMax.X, BbMin.Y, BbMax.Z) + normalOffset; 
+            XYZ bottomRight = new XYZ(BbMax.X, BbMin.Y, BbMin.Z) + normalOffset;
+
+            CreateModelCurve(doc, Line.CreateBound(bottomLeft, topLeft), wallNormal, bottomLeft);       // Left vertical
+            CreateModelCurve(doc, Line.CreateBound(bottomRight, topRight), wallNormal, bottomRight);    // Right vertical
+            CreateModelCurve(doc, Line.CreateBound(topLeft, topRight), wallNormal, topLeft);            // Top horizontal
+
+
+            var InstanceCategory = element.Category.Id.IntegerValue;
+            if(InstanceCategory == (int)BuiltInCategory.OST_Windows)
+            {
+                CreateModelCurve(doc, Line.CreateBound(bottomLeft, bottomRight), wallNormal, bottomLeft);
+
+            }
+        }
         private void CreateModelCurve(Document doc, Curve studCurve, XYZ wallNormal, XYZ wallOrigin)
         {
             Plane plane = Plane.CreateByNormalAndOrigin(wallNormal, wallOrigin);
