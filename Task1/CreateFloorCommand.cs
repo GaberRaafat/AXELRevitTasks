@@ -18,7 +18,6 @@ namespace Task1
         {
             try
             {
-
                 var uidoc = commandData.Application.ActiveUIDocument;
                 var doc = uidoc.Document;
 

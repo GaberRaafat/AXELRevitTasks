@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
-	<AddIn Type="Command">
+	<AddIn Type="Application">
 		<Name>Modify Ssection Box</Name>
 		<Assembly>Task5.dll</Assembly>
 		<AddInId>
 			95B7780D-3457-4C16-8630-42EF857BE56F
 		</AddInId>
-		<FullClassName>Task5.SectionBoxCommand</FullClassName>
+		<FullClassName>Task5.SectionBoxApplication</FullClassName>
 		<Text>Modify Ssection Box.</Text>
 		<Description>Section-Box Modifica􀆟on</Description>
 		<VendorId>ITI</VendorId>

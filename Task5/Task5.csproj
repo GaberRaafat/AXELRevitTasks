@@ -50,8 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SectionBoxCommand.cs" />
+    <Compile Include="SectionBoxApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewSectionData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Task5.addin">
