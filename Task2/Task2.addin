@@ -2,11 +2,11 @@
 <RevitAddIns>
 	<AddIn Type="Command">
 		<Name>WC Placement</Name>
-		<Assembly>Task3.dll</Assembly>
+		<Assembly>Task2.dll</Assembly>
 		<AddInId>
 			C2CEAFB6-A6F9-4B65-BDA2-E8CACA03713E
 		</AddInId>
-		<FullClassName>Task3.ProperPlacementCommand</FullClassName>
+		<FullClassName>Task2.ProperPlacementCommand</FullClassName>
 		<Text>WC Placement.</Text>
 		<Description>Proper Placement of WC Family in Bathroom</Description>
 		<VendorId>ITI</VendorId>
