@@ -8,7 +8,7 @@ using Autodesk.Revit.DB.Structure;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 
-namespace Task1
+namespace Task2
 {
     [Transaction(TransactionMode.Manual)]
     public class ProperPlacementCommand : IExternalCommand

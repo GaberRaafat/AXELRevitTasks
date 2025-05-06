@@ -4,7 +4,7 @@
 		<Name>Modify Ssection Box</Name>
 		<Assembly>Task5.dll</Assembly>
 		<AddInId>
-			95B7780D-3457-4C16-8630-42EF857BE56F
+			C0B243BF-892B-4BA7-A5AA-0555A38095ED
 		</AddInId>
 		<FullClassName>Task5.SectionBoxApplication</FullClassName>
 		<Text>Modify Ssection Box.</Text>
